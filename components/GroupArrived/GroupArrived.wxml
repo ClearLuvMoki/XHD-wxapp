@@ -1,0 +1,64 @@
+<!--"1"讲座-->
+
+<view class="cinema-container-view">
+  <!-- <block wx:for="{{data}}" wx:key="index"> -->
+  <block>
+    <view class="timeClassModel">
+      <!-- 2-2课程内容 -->
+      <view class="classContent-container shadow">
+        <!-- 课程描述 课程 -->
+        <view class="movie-location-container styleTop">
+          <view class="title-item-container ">
+            <image src="../../images/movie-card/class_name.png" class="title-card-image"></image>
+            <!-- <h2 class="title-text-desc">{{item.activityTypeName}}</h2> -->
+            <h2 class="title-text-desc">{{groupArrivedData.activityTypeName}}</h2>
+          </view>
+          <view class="timeContent-container">
+            <image src="http://wechatweb.scitg.com.cn/img/xcx/movie-card/time.png" class="time-icon"></image>
+            <view>{{groupArrivedData.dayType}}</view>
+            <!-- <view>上午</view> -->
+          </view>
+        </view>
+        <!--课程描述  -->
+        <view class="movie-location-container">
+          <view class="location-item">
+            <!-- <text class="hidden_tree">{{item.activityTitle}}</text> -->
+            <text class="hidden_tree">{{groupArrivedData.activityTitle}}</text>
+          </view>
+        </view>
+        <!-- 教师名字 电话 -->
+        <view class="movie-location-container">
+          <view class="location-item">
+            <image src="http://wechatweb.scitg.com.cn/img/xcx/movie-card/teacher_name.png" class="teacherNamePosition"></image>
+            <text class=" bgstyleSp">{{groupArrivedData.teacherName}}</text>
+            <!-- <text class=" bgstyleSp">高奇琦</text> -->
+          </view>
+          <view class="location-item">
+            <view  wx:if="{{ groupArrivedData.inRemark2 ==0 ? noShowex:Showex}}" style="display: flex;align-items: center;">
+              <image src="http://wechatweb.scitg.com.cn/img/xcx/movie-card/btn_tel.png" class="location-pop-image"></image>
+              <h2 class="location-pop-desc" bindlongtap='copyText' selectable='true'>{{groupArrivedData.inRemark2}}</h2>
+            </view>
+            <!-- <h2 class="location-pop-desc">分机号1</h2> -->
+          </view>
+        </view>
+        <!-- 老师职称 -->
+        <view class="title-block-container">
+          <view class="color-block-view nosolidStyle">
+            <h4 class="coloe-block-item">{{groupArrivedData.teacherJob}}</h4>
+            <!-- <h4 class="coloe-block-item">华东政法大学政治学研究院院长、上海市大数据社会科学应用研究会副会长</h4> -->
+          </view>
+        </view>
+        <!-- 3.查看详情  按钮 -->
+        <view class="footer-block-container">
+          <view class="group-buy-view" style="display: flex;    justify-content: flex-end;">
+            <h6 class=" group-buy-item-nc" bindtap="toChange">{{isShow?'收起':'展开'}} <image src="{{isShow?shou:kai}}" style="width: 25px;height: 25px;    margin-top: -3px;position: absolute;    right: 28px;"></image>
+            </h6>
+          </view>
+          <view class="{{isShow?'db' : 'dn'}}">
+            <w-detail-component groupArrivedData="{{groupArrivedData}}"></w-detail-component>
+          </view>
+        </view>
+      </view>
+    </view>
+  </block>
+</view>

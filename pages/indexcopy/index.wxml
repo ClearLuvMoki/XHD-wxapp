@@ -1,0 +1,106 @@
+<modal show="{{showModal}}" height='80%' bindcancel="modalCancel" bindconfirm='modalConfirm' no-cancel="{{nocancel}}">
+	<view class='modal-content'>
+		
+		<view>电话：<input type="text" value="15875984561" name='phone' bindinput="phoneInput"/></view>
+		<view><input type="text" name='name' value="2021年03月04日 上午09:27" bindinput="nameInput"/><span>授课具体的信息如下:</span></view>
+		<view>团组名称: <input type="text" value="高质量发展“尖兵”强化班（第二期）" name='groupname' bindinput="groupnameInput"/></view>
+		<view class="flexD">
+			<p>授课时间：</p><input type="text" value="7月25日上午 09:00-12:00" name='classtime' bindinput="classtimeInput"/>
+		</view>
+		<view class="flexD">
+			<p>茶歇时间：</p><input type="text" value="上午10:30-10:45" name='breaktime' bindinput="breaktimeInput"/>
+		</view>
+		<view>上课地点：<input type="text" value="华中科技大学深圳产学研基地A座T206课室" name='classaddr' bindinput="classaddrInput"/></view>
+		<view>温馨提示：应组团方要求，因培训对象的特殊性，如果涉及政治内容，还请保持中立。</view>
+		<view>我们会准电脑，烦请您备好课件U盘并提前5-10分钟左右到达教室方便调试设备，收到请回复，谢谢！</view>
+		<view>班主任老师：<input type="text" value="张雨涵" name='headteacher' bindinput="headteacherInput"/></view>
+	</view>
+</modal>
+<view class="cinema-container-view">
+	<!-- 主页卡片 -->
+	<!-- <w-card-component model:final-solution-data="{{finalSolutionData}}"></w-card-component> -->
+
+	<block wx:for="{{finalSolutionData}}" wx:key="index">
+		<view class="movie-card-container shadow">
+			<!-- 1.日期 -->
+			<view class="movie-card-title">
+				<view class="footer-block-container">
+					<view class="group-buy-view">
+						<h6 class="group-buy-item">日期</h6>
+						<h6 class="group-buy-item">{{item.specificDate}}</h6>
+					</view>
+				</view>
+				<view class="title-item-container">
+					<image src="http://wechatweb.scitg.com.cn/img/xcx/movie-card/btn_tel.png" class="btn-tel" data-extension='{{item.extension}}'
+						data-phoneNoX='{{item.phoneNoX}}' bindtap="telbtn"></image>
+					
+					<image src="http://wechatweb.scitg.com.cn/img/xcx/movie-card/msg.png" class="btn-msg" bindtap="showModal"></image>
+				</view>
+			</view>
+			<!-- 2 -->
+			<view class="timeClassModel">
+				<!-- 2-1 时间 -->
+				<!-- <view class="timeContent-container">
+				<image src="{{item.timeTypeImageUrl}}" class="time-icon"></image>
+				<view>{{item.timeType}}</view>
+			</view> -->
+				<!-- 2-2课程内容 -->
+				<view class="classContent-container shadow">
+					<!-- 课程描述 课程 -->
+					<view class="movie-location-container styleTop">
+						<view class="title-item-container ">
+							<image src="http://wechatweb.scitg.com.cn/img/xcx/movie-card/class_name.png" class="title-card-image"></image>
+							<h2 class="title-text-desc">{{item.activityTypeName}}</h2>
+						</view>
+						<view class="timeContent-container">
+							<image src="http://wechatweb.scitg.com.cn/img/xcx/movie-card/time.png" class="time-icon"></image>
+							<view>{{item.dayType}}</view>
+						</view>
+					</view>
+					<!--课程描述  -->
+					<view class="movie-location-container">
+						<view class="location-item">
+							<text class="hidden_tree">{{item.activityTitle}}</text>
+						</view>
+					</view>
+					<!-- 教师名字 电话 -->
+					<view class="movie-location-container">
+						<view class="location-item">
+							<image src="http://wechatweb.scitg.com.cn/img/xcx/movie-card/teacher_name.png" class="teacherNamePosition"></image>
+							<text class=" bgstyleSp">{{item.teacherName}}</text>
+						</view>
+						<view class="location-item">
+							<image src="http://wechatweb.scitg.com.cn/img/xcx/movie-card/telphone.png" class="location-pop-image"></image>
+							<h2 class="location-pop-desc">分机号{{item.extension}}</h2>
+						</view>
+					</view>
+
+					<!-- 老师职称 -->
+					<view class="title-block-container">
+						<view class="color-block-view nosolidStyle">
+							<h4 class="coloe-block-item">{{item.teacherJob}}</h4>
+						</view>
+					</view>
+				</view>
+			</view>
+
+
+			<!-- 3.查看详情  按钮 -->
+			<view class="footer-block-container">
+				<view class="group-buy-view">
+					<h6 class=" group-buy-item-nc" bindtap="toChange" data-index='{{index}}'>{{item.isShow?'收起':'展开'}} ></h6>
+				</view>
+				<view class="{{item.isShow?'db' : 'dn'}}">
+					<w-detail-component item="{{item}}"></w-detail-component>
+
+					<view>
+					</view>
+				</view>
+			</view>
+
+
+
+		</view>
+
+	</block>
+</view>

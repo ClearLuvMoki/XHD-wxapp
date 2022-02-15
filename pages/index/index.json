@@ -1,0 +1,13 @@
+
+{
+  
+  "usingComponents": {
+    "group-arrived": "../../components/GroupArrived/GroupArrived",
+    "research-teaching": "../../components/ResearchTeaching/ResearchTeaching" ,
+    "scene-teaching": "../../components/SceneTeaching/SceneTeaching" ,
+    "default": "../../components/Default/Default" 
+  },
+  "navigationBarTitleText": "行程详情",
+  "component": true,
+  "enablePullDownRefresh": true
+}

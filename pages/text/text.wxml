@@ -1,0 +1,13 @@
+<!--pages/text/text.wxml-->
+<modal-text show="{{showModal}}"  bindcancel="modalCancel" bindconfirm='modalConfirm' no-cancel="{{nocancel}}">
+  <view class='modal-content' style="padding:20px;">
+    {{noticeparamsTypeOne}}
+  </view>
+</modal-text>
+<view class="labelOne m-t-50" bindtap="labelOne"></view>
+<view class="labelTwo m-t-50" bindtap="labelTwo"></view>
+<view class="labelThree m-t-50" bindtap="labelThree"></view>
+<view class="labelFour m-t-50" bindtap="labelFour"></view>
+<view class="labelFive m-t-50" bindtap="labelFive"></view>
+<view class="labelSix m-t-50" bindtap="labelSix"></view>
+ 

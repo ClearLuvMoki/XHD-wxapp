@@ -1,0 +1,10 @@
+{
+  "backgroundTextStyle": "light",
+  "navigationBarBackgroundColor": "#000",
+  "navigationBarTitleText": "登录",
+  "navigationBarTextStyle": "white",
+  "usingComponents": {
+    "modal": "../../components/modal/modal"
+  },
+  "component": true
+}

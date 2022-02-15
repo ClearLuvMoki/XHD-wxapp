@@ -1,0 +1,6 @@
+{
+  "component": true,
+  "usingComponents": {
+    "w-detail-component1": "../../components/w-detail-component1/w-detail-component1"
+  }
+}

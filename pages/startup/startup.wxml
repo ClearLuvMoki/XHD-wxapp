@@ -1,0 +1,7 @@
+
+<view>
+ <image src="http://wechatweb.scitg.com.cn/img/xcx/loading.png" mode='aspectFill' class="slide-image"  bindtap='goto_next'/> 
+ <!-- <image src="../../images/loading.png" mode='aspectFill' class="slide-image"  bindtap='goto_next'/>  -->
+</view>
+     
+<!-- <view class="next_btn" bindtap='goto_next'>立即体验</view> -->

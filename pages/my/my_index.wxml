@@ -1,0 +1,110 @@
+<view class="main main-my-index main-{{skin}}">
+	<!--top area begin-->
+	<view class="user  bg-{{skin}}">
+		<view class="school-cover"
+			style="background-image:url('http://wechatweb.scitg.com.cn/img/xcx/main_orange.png"></view>
+		<view class="user-bar">
+			<view bindtap="bindAvatarTap" class="avatar round border-{{skin}}" wx:if="{{user.USER_PIC}}">
+				<image model="aspectFit" class="avatar xl round bg-gray" src="{{user.USER_PIC}}"></image>
+				<view class="tag badge bg-red icon-female" wx:if="{{user.USER_SEX==2}}"></view>
+				<view class="tag badge bg-blue icon-male" wx:if="{{user.USER_SEX==1}}"></view>
+			</view>
+
+			<view class="avatar xl round bg-gray" wx:if="{{!user.USER_PIC}}" catchtap="url" data-url="/pages/reg/reg_step1">
+				<open-data class="avatar-open" type="userAvatarUrl"></open-data>
+			</view>
+
+
+
+			<view class="detail" wx:if="{{!user.USER_NAME}}">
+				<view class="name">{{groupTeacherPhone}}</view>
+				<view class="desc">
+					<view class="text-white">{{groupTeacherName}}</view>
+				</view>
+			</view>
+			<!-- <navigator url="/pages/login/login" hover-class="none"><image src="http://wechatweb.scitg.com.cn/img/xcx/exit.png" style="width: 30px;height: 30px;"></image></navigator> -->
+		<image src="http://wechatweb.scitg.com.cn/img/xcx/exit.png" style="width: 30px;height: 30px;" bindtap='ExitUserInfo'></image>
+		</view>
+
+	</view>
+	<!--top area end-->
+
+	<!--down area begin-->
+	<view class="down">
+		<!--团组名称 -->
+		<view class="comm-list menu card-menu margin-top shadow radius">
+			<view class="item arrow">
+				<view class="content">
+					<text class="icon-group_fill item-icon text-olive"></text>
+					<text class="text-black">团组名称</text>
+					<text class="text-black zwhFr">{{GetTrainingMainByNeedsIdList.groupName}}</text>
+				</view>
+			</view>
+		</view>
+		<!-- 客户名称 -->
+		<view class="comm-list menu card-menu margin-top shadow radius">
+			<view class="item arrow">
+				<view class="content">
+					<text class="icon-friendaddfill item-icon text-orange"></text>
+					<text class="text-black">客户名称</text>
+					<text class="text-black zwhFr">{{GetTrainingMainByNeedsIdList.clientName}}</text>
+				</view>
+			</view>
+		</view>
+		<!--培训时间 -->
+		<view class="comm-list menu card-menu margin-top shadow radius">
+			<view class="item arrow">
+				<view class="content">
+					<text class="icon-friendadd item-icon text-orange"></text>
+					<text class="text-black">培训开始时间</text>
+					<text class="text-black zwhFr">{{GetTrainingMainByNeedsIdList.trainingDate}}</text>
+				</view>
+			</view>
+			<view class="item arrow">
+				<view class="content">
+					<text class="icon-friendfavor item-icon text-blue"></text>
+					<text class="text-black">培训结束时间</text>
+					<text class="text-black zwhFr">{{GetTrainingMainByNeedsIdList.trainingEndDate}}</text>
+				</view>
+			</view>
+		</view>
+		<!--培训人数和地点 -->
+		<view class="comm-list menu card-menu margin-top  shadow radius">
+
+			<view class="item arrow">
+				<view class="content">
+					<text class="icon-friend item-icon text-green"></text>
+					<text class="text-black">培训人数</text>
+					<text class="text-black zwhFr">{{GetTrainingMainByNeedsIdList.peopleNum}}</text>
+				</view>
+			</view>
+			<view class="item arrow">
+				<view class="content">
+					<text class="icon-activity item-icon text-green"></text>
+					<text class="text-black">培训地点</text>
+					<text class="text-black zwhFr">{{GetTrainingMainByNeedsIdList.trainingAddress}}</text>
+				</view>
+			</view>
+
+
+
+		</view>
+		<!--sys end -->
+		<!--学员调查统计 -->
+		<view class="comm-list menu card-menu margin-top shadow radius">
+			<view class="item arrow" bindtap='toViewBtn'>
+				<view class="content">
+					<text class="icon-friend item-icon text-green"></text>
+					<text class="text-black">学员调查统计</text>
+					<text class="text-black zwhFr" >查看</text>
+				</view>
+			</view>
+		</view>
+		<!--sys end -->
+
+	</view>
+	<!--down area end-->
+
+
+
+</view>

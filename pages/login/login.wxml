@@ -1,0 +1,36 @@
+<modal show="{{showModal}}" height='50%' bindcancel="modalCancel" bindconfirm='modalConfirm' no-cancel="{{nocancel}}">
+	<view class='modal-content'>
+	<view>
+		<text class="activtytitleStyle">请选择团组名称~</text></view>
+		<view class='select_box'>
+    <view class='select' catchtap='selectTap'>
+      <text class='select_text'>{{selectData[index].groupName}}</text>
+      <image class='select_img {{show&&"select_img_rotate"}}' src='http://wechatweb.scitg.com.cn/img/xcx/icon/down.png'></image>
+    </view>
+    <view class='option_box' style='height:{{show?(selectData.length>5?300:selectData.length*60):0}}rpx;'>
+      <text class='option' style='{{index==selectData.length-1&&"border:0;"}}' wx:for='{{selectData}}' wx:key='this'
+        data-index='{{index}}' catchtap='optionTap'>{{item.groupName}}</text>
+    </view>
+  </view>
+
+	</view>
+</modal>
+<view class="login" style="background:url('http://wechatweb.scitg.com.cn/img/xcx/bg-login.png') no-repeat;background-size: 100%; ">
+	<image class='logo' src='http://wechatweb.scitg.com.cn/img/xcx/logo.png'></image>
+	<form bindsubmit = "formSubmit">
+		<view class='box'>
+			<view class='row'>
+				<image class='icon' src='http://wechatweb.scitg.com.cn/img/xcx/icon/icon02.png'></image>
+				<input type='text' name="userMobile" class='text' placeholder='请输入手机号' placeholder-style="color:#ccc" value= "{{userMobile}}" ></input>
+			</view>
+			<view class='row' >
+				<image class='icon' src='http://wechatweb.scitg.com.cn/img/xcx/icon/icon07.png'></image>
+				<input type='password' name="userPwd" class='text' placeholder='请输入密码' placeholder-style="color:#ccc" value= "{{userPwd}}"></input>
+			</view>
+			<button type='primary' form-type = "submit" class='btn'>登录</button>
+			<!-- <button type='primary' open-type='getUserInfo' bindgetuserinfo='GetUserInfo' form-type = "submit"  class='btn'>登录</button> -->
+		</view>
+	</form>
+
+</view>
+    

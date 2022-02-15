@@ -1,0 +1,39 @@
+<!-- <template is="_loading" data="{{loading:loading,layer:2}}" /> -->
+
+<view class="status-box">
+	<view bindtap="statusTap" class="status-label {{index == currentType ? 'active' : ''}}" wx:for-items="{{statusType}}" wx:key="index" data-index="{{index}}">
+		{{item}}
+	</view>
+</view>
+
+<view class="no-data" hidden="{{messageList ? true : false}}">
+	<image src="" class="no-data-img"></image>
+	<view class="text">暂无相关数据{{currentType}}！</view>
+</view>
+
+<scroll-view style="height: 100%;" scroll-y="true" scroll-with-animation="true" scroll-top="{{scrollTo}}" scroll-with-animation="true">
+	<view class='message_list'>
+		<view class="item {{item.isTouchMove ? 'touch-move-active' : ''}}" data-guid="{{item.info_guid}}" data-index="{{index}}" bindtouchstart="touchstart" bindtouchmove="touchmove" wx:for="{{messageList}}" wx:key="index" >
+			<view class="content" wx:if="{{currentType ==0 ? true : item.type==='1'}}">
+				<view>
+					<!-- <image class='avatar' src='http://wechatweb.scitg.com.cn/img/xcx/icon/out.png'></image> -->
+					<image src="{{item.type==='1'?out:enter}}" class='avatar'></image>
+				</view>
+				<view class='info'>
+					<view class='info-title'>
+						<!-- <view class="{{item.isShow ? 'no-badge' : 'badge'}}"></view> -->
+						{{item.teacherName}}
+						<!-- <span class="info_timeType">{{item.info_timeType}}</span> -->
+					</view>
+					<view class='info-p'>{{item.activityTitle}}</view>
+				</view>
+				<view class='time'>{{item.call_time}}</view>
+				<view class='list_btn'  data-extension='{{item.extension}}' data-secret_no='{{item.secret_no}}' bindtap="listbtn"><span>回拨</span></view>
+				<!-- <view class='list_btn' bindtap="listbtn"><span>回拨</span></view> -->
+			</view>
+		</view>
+	</view>
+</scroll-view>
+
+<view class="load-more" hidden="{{loadmore==true ? false : true}}" bindtap="getLoadMore" data-page="{{pageIndex}}">加载更多...</view>
+<view class="no-more" hidden="{{loadmore==false&&pageCount>1 ? false : true}}">已经到底啦~</view>

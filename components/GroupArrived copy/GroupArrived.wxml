@@ -1,0 +1,110 @@
+<!--"1"讲座-->
+<modal show="{{showModal}}" height='80%' bindcancel="modalCancel" bindconfirm='modalConfirm' no-cancel="{{nocancel}}">
+  <view class='modal-content' style="padding:20px;">
+    <view>
+    <button class="copyStyle" bindtap="copyBtn">复制文本</button></view>
+    <view>【新汇点】尊敬的<span style="color:#ff7736;font-size:26rpx;">{{groupArrivedData.teacherName}}</span>,您好！授课具体信息如下：
+    </view>
+
+    <!-- <view>课程名称: <span style="color:#ff7736;font-size:26rpx;">啦啦啦啦啦啦</span></view> -->
+    <view>课程名称: <span style="color:#ff7736;font-size:26rpx;">{{groupArrivedData.activityTitle}}</span></view>
+    <view class="flexD">
+
+      <p style="width:28%">授课时间：</p>
+      <picker mode="date" value="{{classdate}}" bindchange="bindDateStartChange">
+        <view class="picker" style="display:flex;align-items : flex-start; ">
+          <image src="http://wechatweb.scitg.com.cn/img/xcx/movie-card/pickerDate.png" style="width:20px;height:20px;"/>
+          <span>{{classdate}}</span>
+        </view>
+      </picker>
+      <picker mode="time" value="{{classtime}}" bindchange="bindTimeChange">
+        <view class="picker" style="display:flex;">
+          <image src="http://wechatweb.scitg.com.cn/img/xcx/movie-card/pickertime.png" style="width: 20px;height: 20px;" />
+          <span>{{classtime}}</span>
+          
+        </view>
+      </picker>
+    </view>
+    <view class="flexD">
+      <p style="width:30%">茶歇时间：</p>
+      <picker mode="time" value="{{TimeChangeTea}}" bindchange="bindTimeChangeTea">
+        <view class="picker" style="display:flex;">
+          <image src="http://wechatweb.scitg.com.cn/img/xcx/movie-card/pickertime.png" style="width: 20px;height: 20px;" />
+          <span>{{TimeChangeTea}}</span>
+          
+        </view>
+      </picker>
+    </view>
+    <view class="flexD">
+      <p style="width:30%">上课地点：</p><input type="text" value="{{groupArrivedData.roomName}}" name='classaddr'
+        bindinput="classaddrInput" placeholder="请输入上课地点"/>
+    </view>
+
+    <view>班主任老师：<span style="color:#ff7736;font-size:26rpx;">{{groupTeacherName}}</span></view>
+    <view>如有问题，请联系：<span>{{groupTeacherPhone}}</span></view>
+  </view>
+</modal>
+<view class="cinema-container-view">
+  <!-- <block wx:for="{{data}}" wx:key="index"> -->
+  <block>
+    <view class="timeClassModel">
+      <!-- 2-2课程内容 -->
+      <view class="classContent-container shadow">
+        <!-- 课程描述 课程 -->
+        <view class="movie-location-container styleTop">
+          <view class="title-item-container ">
+            <image src="../../images/movie-card/class_name.png" class="title-card-image"></image>
+            <!-- <h2 class="title-text-desc">{{item.activityTypeName}}</h2> -->
+            <h2 class="title-text-desc">{{groupArrivedData.activityTypeName}}</h2>
+          </view>
+          <view class="timeContent-container">
+            <image src="http://wechatweb.scitg.com.cn/img/xcx/movie-card/time.png" class="time-icon"></image>
+            <view>{{groupArrivedData.dayType}}</view>
+            <!-- <view>上午</view> -->
+          </view>
+        </view>
+        <!--课程描述  -->
+        <view class="movie-location-container">
+          <view class="location-item">
+            <!-- <text class="hidden_tree">{{item.activityTitle}}</text> -->
+            <text class="hidden_tree">{{groupArrivedData.activityTitle}}</text>
+          </view>
+        </view>
+        <!-- 教师名字 电话 -->
+        <view class="movie-location-container">
+          <view class="location-item">
+            <image src="http://wechatweb.scitg.com.cn/img/xcx/movie-card/teacher_name.png" class="teacherNamePosition"></image>
+            <text class=" bgstyleSp">{{groupArrivedData.teacherName}}</text>
+            <!-- <text class=" bgstyleSp">高奇琦</text> -->
+          </view>
+          <view class="location-item">
+            <view bindtap="telbtn" wx:if="{{ groupArrivedData.extension ==0 ? noShowex:Showex}}">
+              <image src="http://wechatweb.scitg.com.cn/img/xcx/movie-card/btn_tel.png" class="location-pop-image"
+                data-extension='{{groupArrivedData.extension}}' data-phoneNoX='{{groupArrivedData.phoneNoX}}'></image>
+              <h2 class="location-pop-desc"  data-extension='{{groupArrivedData.extension}}' data-phoneNoX='{{groupArrivedData.phoneNoX}}'>分机号{{groupArrivedData.extension}}</h2>
+            </view>
+            <!-- <h2 class="location-pop-desc">分机号1</h2> -->
+            <image src="http://wechatweb.scitg.com.cn/img/xcx/movie-card/msg.png" class="location-pop-image1" bindtap="showModal"></image>
+          </view>
+        </view>
+        <!-- 老师职称 -->
+        <view class="title-block-container">
+          <view class="color-block-view nosolidStyle">
+            <h4 class="coloe-block-item">{{groupArrivedData.teacherJob}}</h4>
+            <!-- <h4 class="coloe-block-item">华东政法大学政治学研究院院长、上海市大数据社会科学应用研究会副会长</h4> -->
+          </view>
+        </view>
+        <!-- 3.查看详情  按钮 -->
+        <view class="footer-block-container">
+          <view class="group-buy-view" style="display: flex;    justify-content: flex-end;">
+            <h6 class=" group-buy-item-nc" bindtap="toChange">{{isShow?'收起':'展开'}} <image src="{{isShow?shou:kai}}" style="width: 25px;height: 25px;    margin-top: -3px;position: absolute;    right: 28px;"></image>
+            </h6>
+          </view>
+          <view class="{{isShow?'db' : 'dn'}}">
+            <w-detail-component item="{{item}}"></w-detail-component>
+          </view>
+        </view>
+      </view>
+    </view>
+  </block>
+</view>

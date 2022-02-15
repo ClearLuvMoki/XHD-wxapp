@@ -1,0 +1,53 @@
+
+<!--默认-->
+<view class="cinema-container-view">
+  <block>
+    <view class="timeClassModel">
+      <!-- 2-2课程内容 -->
+      <view class="classContent-container shadow">
+        <!-- 课程描述 课程 -->
+        <view class="movie-location-container styleTop">
+          <view class="title-item-container ">
+            <image src="http://wechatweb.scitg.com.cn/img/xcx/movie-card/class_name.png" class="title-card-image"></image>
+            <h2 class="title-text-desc">{{defaultData.activityTypeName}}</h2>
+            <!-- <h2 class="title-text-desc">默认模板</h2> -->
+          </view>
+          <view class="timeContent-container">
+            <image src="http://wechatweb.scitg.com.cn/img/xcx/movie-card/time.png" class="time-icon"></image>
+            <view>{{defaultData.dayType}}</view>
+            <!-- <view>下午</view> -->
+          </view>
+        </view>
+
+        <!-- 调研式教学流程 -->
+        <view class="title-block-container1">
+          <view class="color-block-view nosolidStyle">
+            <h4 class="coloe-block-item" wx:if="{{defaultData.inContent == ''?spannoShow:spanShow}}">{{defaultData.inContent}}</h4>
+            <!-- <h4 class="coloe-block-item">调研式教学流程调研式教学流程调研式教学流程调研式教学流程调研式教学流程调研式教学流程调研式教学流程调研式教学流程</h4> -->
+          </view>
+        </view>
+        <!-- beizhu -->
+        <view class="title-block-container1">
+          <view class="color-block-view nosolidStyle1">
+            <h4 class="coloe-block-item1" wx:if="{{defaultData.inRemark1 == ''?spannoShow:spanShow}}">
+            {{defaultData.inRemark1}}</h4>
+            
+            <!-- <h4 class="coloe-block-item1">调研式教学流程调研式教学流程调研式教学流程调研式教学流程调研式教学流程调研式教学流程调研式教学流程调研式教学流程</h4> -->
+          </view>
+        </view>
+        <!-- 3.查看详情  按钮 -->
+        <!-- <view class="footer-block-container">
+          <view class="group-buy-view" style="display: flex;    justify-content: flex-end;">
+            <h6 class=" group-buy-item-nc" bindtap="toChange">{{isShow?'收起':'展开'}} <image src="{{isShow?shou:kai}}" style="width: 25px;height: 25px; margin-top: -3px;position: absolute;right: 28px;"></image>
+            </h6>
+          </view>
+          <view class="{{isShow?'db' : 'dn'}}">
+            <w-detail-component defaultData="{{defaultData}}"></w-detail-component>
+            <view>
+            </view>
+          </view>
+        </view> -->
+      </view>
+    </view>
+  </block>
+</view>

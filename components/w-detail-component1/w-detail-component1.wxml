@@ -1,0 +1,62 @@
+<!-- 详情展开1  只有备注 -->
+<view class="page">
+	<view class="weui-cells weui-cells_after-title">
+		<view class="weui-cell">
+			<view class="weui-cell__bd">时间</view>
+			<!-- <view class="weui-cell__ft">上午10.00-12.00</view> -->
+			<view class="weui-cell__ft">{{sceneTeachingData.inRemark2}}</view>
+		</view>
+		<view class="weui-cell">
+			<view class="weui-cell__bd">联系人</view>
+			<!-- <view class="weui-cell__ft" bindtap="detailclick">高主任 昆山小核酸所办公室主任158 5017 1204</view> -->
+			<view class="weui-cell__ft" bindlongtap='copyTextInRemark3' selectable='true'>{{sceneTeachingData.inRemark3}}</view>
+		</view>
+		<view class="weui-cell">
+			<view class="weui-cell__bd">出席人</view>
+			<view class="weui-cell__ft">{{sceneTeachingData.inRemark4}}</view>
+		</view>
+		<view class="weui-cell weui-cell_input">
+			<view class="weui-cell__hd">
+				<view class="weui-label">地址</view>
+			</view>
+			<view class="weui-cell__bd" style="display: contents;">
+				<view class="weui-cell__bd warn-tail" bindlongtap='copyText' selectable='true'>{{sceneTeachingData.address}}</view>
+				<!-- <button data-address="{{sceneTeachingData.address}}"  plain="true" bindtap="share">分享</button> -->
+				<button data-visitid="{{sceneTeachingData.visitId}}" open-type="share" plain="true" bindgetuserinfo="share"></button>
+			
+				
+			</view>
+
+		</view>
+		<view class="weui-cell">
+			<view class="weui-cell__bd">流程</view>
+			<view class="weui-cell__ft">{{sceneTeachingData.inRemark5}}
+			</view>
+		</view>
+		<!-- <view class="weui-cell">
+			<view class="weui-cell__bd">visitId</view>
+			<view class="weui-cell__ft">{{sceneTeachingData.visitId}}
+			</view>
+		</view> -->
+		<view class="weui-cell">
+			<view class="weui-cell__bd" style="width:75%;">学习
+				目的</view>
+			<view class="weui-cell__ft">{{sceneTeachingData.inRemark1}}</view>
+		</view>
+		<view class="weui-cell">
+			<view class="weui-cell__bd">注意事项</view>
+			<checkbox-group bindchange='checkChange' class="weui-cell__ft">
+				<label wx:for='{{sceneTeachingData.finalAttentionSetDTOs}}'  wx:for-item="finalSolutionsitem" wx:key="{{finalSolutionsitem}}" style="float:left;">
+					<!-- attentionName -->
+					<checkbox style="padding:5px;" value='{{finalSolutionsitem.attentionType}}' checked='{{finalSolutionsitem.setFlg=="1"?true:false}}'><span style="margin:10rpx;">{{finalSolutionsitem.attentionName}}</span></checkbox>
+				</label>
+			</checkbox-group>
+
+		</view>
+		<view class="weui-cell">
+			<view class="weui-cell__bd">备注</view>
+			<view class="weui-cell__ft">{{sceneTeachingData.inContent}}</view>
+		</view>
+	</view>
+
+</view>

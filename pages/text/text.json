@@ -1,0 +1,8 @@
+{
+  "usingComponents": {
+    "modal-text": "../../components/modalText/modalText"
+  },
+  "navigationBarTitleText": "消息文本内容页",
+  "component": true,
+  "enablePullDownRefresh": true
+}

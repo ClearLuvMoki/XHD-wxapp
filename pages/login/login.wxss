@@ -1,0 +1,120 @@
+
+page {
+background-color:#f9f9f9;
+}
+.activtytitleStyle{
+  font-size: 40rpx;
+  color: black;
+  position: absolute;
+  top: 9%;
+  left: 10%;
+}
+/* pages/select/select.wxss */
+/* 下拉 */
+.bgSelect {
+  background-image: url(http://wechatweb.scitg.com.cn/img/xcx/select2.png);
+  width: 100%;
+  height: 100%;
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  background-attachment: fixed;
+  position: absolute;
+  text-align: center;
+}
+.textStyle{
+  font-size: 35rpx;
+  color: #FF5722;
+  font-weight: 600;
+  margin-left: -48%;
+  margin-top: 75%;
+  position: absolute;
+  width: 100%;
+}
+.select_box {
+  background: #ff5722;
+  width: 80%;
+  position: relative;
+  display: flex;
+  z-index: 999;
+  margin: 22% auto;
+  border-radius: 8px;
+  /* border-radius: 100rpx; */
+  color: #fff;
+
+}
+.btnSelect{
+  position: absolute;
+  bottom: 18%;
+  width: 50%;
+  color: #ff001b;
+  border-radius: 50rpx;
+  background: #ffd100;
+  margin: 0 auto;
+  left: 25%;
+
+}
+.select {
+  box-sizing: border-box;
+  width: 100%;
+  height: 100rpx;
+  border: 1px solid #efefef;
+  border-radius: 8rpx;
+  display: flex;
+  align-items: center;
+  padding: 0 20rpx;
+  /* margin-left: 20rpx; */
+
+}
+
+.select_text {
+  font-size: 30rpx;
+  flex: 1;
+}
+
+.select_img {
+  width: 28rpx;
+  height: 24rpx;
+  display: block;
+  transition: transform 0.3s;
+}
+
+.select_img_rotate {
+  transform: rotate(180deg);
+}
+
+.option_box {
+  position: absolute;
+  top: 80rpx;
+  width: 100%;
+  /* border:1px solid #efefef; */
+  box-sizing: border-box;
+  height: 200rpx;
+  overflow-y: auto;
+  border-top: 0;
+  background: #fc9778;
+  transition: height 0.3s;
+  /* margin-left: 20rpx; */
+
+}
+
+.option {
+  display: block;
+  line-height: 40rpx;
+  font-size: 30rpx;
+  border-bottom: 1px solid #efefef;
+  padding: 10rpx;
+}
+/**app.wxss**/
+
+.login{text-align: cenrter;padding:130rpx 0 0 0;}
+.login .logo{width:250rpx;height:250rpx;margin: 0 auto;display: block;margin-top: 182rpx;}
+.login .box{width:600rpx;margin:-34rpx auto 0;}
+.login .row{display: flex;align-items: center;border-bottom:1px solid #ccc;padding-top: 60rpx;}
+.login .row .icon{width:34rpx;height: 34rpx;}
+.login .row .text{flex:1;height: 60rpx;font-size: 28rpx;margin-left: 15rpx;}
+.login .row .text:-webkit-input-placeholder{color:ccc;}
+.login .btn{height: 100rpx; line-height: 100rpx; margin-top: 166rpx; background-color: #F74C31; border-radius: 100rpx; color:#fff; font-size: 38rpx;width: 100%;}
+
+/** 修改button默认的点击态样式类**/
+button[type="warn"].button-hover {background-color: #4b36eb;opacity:0.9;}
+

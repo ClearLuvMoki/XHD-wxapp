@@ -1,0 +1,43 @@
+<!--11-20 拜访类 现场教学-->
+<view class="cinema-container-view">
+  <block>
+    <view class="timeClassModel">
+      <!-- 2-2课程内容 -->
+      <view class="classContent-container shadow">
+        <!-- 课程描述 课程 -->
+        <view class="movie-location-container styleTop">
+          <view class="title-item-container ">
+            <image src="http://wechatweb.scitg.com.cn/img/xcx/movie-card/class_name.png" class="title-card-image"></image>
+            <h2 class="title-text-desc">{{sceneTeachingData.activityTypeName}}</h2>
+            <!-- <h2 class="title-text-desc">现场教学</h2> -->
+          </view>
+          <view class="timeContent-container">
+            <image src="http://wechatweb.scitg.com.cn/img/xcx/movie-card/time.png" class="time-icon"></image>
+            <view>{{sceneTeachingData.dayType}}</view>
+            <!-- <view>下午</view> -->
+          </view>
+        </view>
+        <!--课程描述  -->
+        <view class="movie-location-container">
+          <view class="location-item">
+            <text class="hidden_tree">{{sceneTeachingData.activityTitle}}</text>
+            <!-- <text class="hidden_tree">国家火炬特色产业基地——昆山小核酸产业基地+昆山科博馆（小核酸产业基地13:30开始，科博馆14:30开始）</text> -->
+          </view>
+        </view>
+
+        <!-- 3.查看详情  按钮 -->
+        <view class="footer-block-container">
+          <view class="group-buy-view">
+            <h6 class=" group-buy-item-nc" bindtap="toChange">{{isShow?'收起':'展开'}} <image src="{{isShow?shou:kai}}" style="width: 25px;height: 25px;    margin-top: -3px;position: absolute;    right: 28px;"></image>
+            </h6>
+          </view>
+          <view class="{{isShow?'db' : 'dn'}}">
+            <w-detail-component1 sceneTeachingData="{{sceneTeachingData}}"></w-detail-component1>
+            <view>
+            </view>
+          </view>
+        </view>
+      </view>
+    </view>
+  </block>
+</view>

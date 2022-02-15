@@ -1,0 +1,7 @@
+{
+  "component": true,
+  "usingComponents": {
+    "w-detail-component": "../../components/w-detail-component/w-detail-component",
+    "modal": "../../components/modal/modal"
+  }
+}

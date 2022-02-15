@@ -1,0 +1,15 @@
+/*********** skin1 begin ************/
+
+.color-skin1 {
+	color: #e15230!important;
+}
+
+.bg-skin1,
+.after-skin1:after {
+	background-color: #e15230 !important;
+	color: #fff !important;
+}
+
+.border-skin1 {
+	border-color: #e15230 !important;
+} 

@@ -1,0 +1,10 @@
+
+{
+  
+  "usingComponents": {
+    "w-detail-component": "../../components/w-detail-component/w-detail-component",
+    "modal": "../../components/modal/modal"
+  },
+  "navigationBarTitleText": "成型行程-内部行程",
+  "component": true
+}

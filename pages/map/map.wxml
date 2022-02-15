@@ -1,0 +1,21 @@
+<!--pages/map/map.wxml-->
+<!-- <web-view src="http://zhtong.sipyun.com/XHREPMINIPROGRAM/mapDemo.html"></web-view> -->
+<!-- <web-view src="https://www.baidu.com/"></web-view> -->
+<view class="inputStyle">
+  <!-- <view class="blackStyle" ></view> -->
+  <view class="inputT">
+   
+  <input type="button" value="位置 " class="ana" disabled="disabled"/>
+    <input name="address" type="text" id="address" class="inp" value="{{address}}" />
+  </view>
+  <view class="inputT">
+    <input name="jingdu" type="text" id="jingdu" value="{{longitude}}" />
+  <input name="weidu" type="text" id="weidu" value="{{latitude}}" />
+  </view>
+</view>
+<br />
+<view class="" hover-class="none" hover-stop-propagation="false" style="width: 100%; height: 100%;">
+  <map id="map" longitude="{{longitude}}" latitude=" {{latitude}}" markers="{{markers}}" covers="{{covers}}" scale="13" show-location
+    style="width:95%;height:80%;border-radius:10px;margin:7% auto;border-radius: 10px;"></map>
+  {{longitude}}
+</view>

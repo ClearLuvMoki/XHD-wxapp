@@ -1,0 +1,32 @@
+<!--"1"讲座-->
+
+<view class="cinema-container-view">
+  <block wx:for="{{finalSolutionData}}" wx:key="index">
+    <view class="movie-card-container shadow">
+      <!-- 1.日期 -->
+      <view class="movie-card-title">
+        <view class="footer-block-container">
+          <view class="group-buy-view">
+            <h6 class="group-buy-item">{{item.xhweekday}}</h6>
+            <h6 class="group-buy-item">{{item.specificDate}}</h6>
+          </view>
+        </view>
+        <view class="title-item-container">
+          <h5>{{item.inGift}}</h5>
+          <!-- <h5>带伞、带衣服，打电话带伞、带衣服，打电话</h5> -->
+        </view>
+      </view>
+     
+      <!-- 引用组件各课程模板 -->
+     <view wx:for="{{item.finalSolutions}}" wx:for-item="finalSolutionsitem" wx:key="{{finalSolutionsitem}}">
+     
+       <group-arrived model:group-arrived-data="{{finalSolutionsitem}}" wx:if='{{finalSolutionsitem.activityType <= 10 && finalSolutionsitem.activityType != 9?see_view:hide_view}}'></group-arrived>
+      <research-teaching model:research-teaching-data="{{finalSolutionsitem}}"  wx:if='{{finalSolutionsitem.activityType == 9?see_view:hide_view}}'></research-teaching>
+      <scene-teaching model:scene-teaching-data="{{finalSolutionsitem}}"  wx:if='{{finalSolutionsitem.activityType <= 20 && finalSolutionsitem.activityType >10?see_view:hide_view}}'></scene-teaching>
+      <default model:default-data="{{finalSolutionsitem}}" wx:if='{{finalSolutionsitem.activityType>20 ?see_view:hide_view}}'></default>
+      
+     </view>
+     
+    </view>
+  </block>
+</view>
